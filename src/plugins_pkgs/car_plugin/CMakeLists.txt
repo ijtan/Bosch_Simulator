@@ -10,11 +10,6 @@ find_package(catkin REQUIRED COMPONENTS
 )
 find_package(gazebo REQUIRED)
 
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
-
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${roscpp_INCLUDE_DIRS} ${std_msgs_INCLUDE_DIRS})

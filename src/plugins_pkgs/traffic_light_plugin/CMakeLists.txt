@@ -22,8 +22,6 @@ add_library(traffic_light_plugin SHARED src/traffic_light_plugin.cpp include/tra
 
 target_link_libraries(traffic_light_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
-add_dependencies(traffic_light_plugin traffic_light_pkg_generate_messages_cpp)
-
 catkin_package(
   CATKIN_DEPENDS
   roscpp

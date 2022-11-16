@@ -6,11 +6,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
- generate_messages(
-   DEPENDENCIES
-   std_msgs
- )
-
 catkin_package(
   CATKIN_DEPENDS rospy std_msgs 
 )

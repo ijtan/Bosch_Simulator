@@ -11,8 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(gazebo REQUIRED)
 
-generate_messages(DEPENDENCIES)
-
 catkin_package(CATKIN_DEPENDS 
   gazebo_ros
   roscpp
