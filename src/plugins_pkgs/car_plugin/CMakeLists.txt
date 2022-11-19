@@ -10,6 +10,13 @@ find_package(catkin REQUIRED COMPONENTS
 )
 find_package(gazebo REQUIRED)
 
+catkin_package(
+    CATKIN_DEPENDS
+    roscpp
+    gazebo_ros
+    std_msgs
+)
+
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${roscpp_INCLUDE_DIRS} ${std_msgs_INCLUDE_DIRS})
@@ -17,17 +24,12 @@ include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 
-add_library(car_plugin SHARED src/carlikerobot_ros_plugin.cpp src/carlikerobot.cpp)
+add_library(car_plugin SHARED src/carlikerobot_ros_plugin.cpp src/carlikerobot.cpp include/carlikerobot_ros_plugin.hpp include/carlikerobot.hpp)
 
 target_link_libraries(car_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 
 
 
-catkin_package(
-    CATKIN_DEPENDS
-    roscpp
-    gazebo_ros
-    std_msgs
-)
+
 
