@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>vehicle_interface</name>
+  <name>simulation_vehicle_interface</name>
   <version>0.0.0</version>
   <description>The simulation_vehicle_interface package</description>
 

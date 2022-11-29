@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(vehicle_interface)
+project(simulation_vehicle_interface)
 
 find_package(catkin REQUIRED COMPONENTS
   std_msgs

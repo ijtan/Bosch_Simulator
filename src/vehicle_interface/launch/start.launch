@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
- 
-  <launch>
- 
-  <node pkg="vehicle_interface" type="simulation_vehicle_interface.py" name="vehicle_interface" output="screen"/>
-
-  </launch>
