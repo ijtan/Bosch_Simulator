@@ -45,9 +45,9 @@
     <!-- including the camera link -->
     <!-- 0.261799388 -->
     <include>
-      <uri>model://camera</uri>
+      <uri>model://camera_front</uri>
       <pose>0 0 0.2 0 0.2617 0</pose>
-      <name>camera</name>
+      <name>camera_front</name>
     </include>
 
     <!-- includeing the car body -->
@@ -288,7 +288,7 @@
     <!-- fixed joint for the camera -->
     <joint name='joint_camera' type='fixed'>
       <parent>chassis::link</parent>
-      <child>camera::link_camera</child>
+      <child>camera_front::link_camera</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <physics>
         <ode>

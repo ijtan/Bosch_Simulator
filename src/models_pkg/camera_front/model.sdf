@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 
 <sdf version='1.6'>
-  <model name='camera'>
+  <model name='camera_front'>
     <link name='link_camera'>
       <inertial>
         <mass>0.0052875</mass>
