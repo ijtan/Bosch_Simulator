@@ -117,6 +117,8 @@ class RcBrainThread:
             It contains the robot current control state, speed and angle. 
         """
         data = {}
+        
+
         # BRAKE command
         if self.currentState[4]:
             data['action']        =  '3'
@@ -149,6 +151,10 @@ class RcBrainThread:
             self.currentState[7] = False
         else:
             return None
+
+        data['steerAngle']    =  float(self.steerAngle)
+        data['action']        =  '2'
+        print(data)
             
         return data
         
@@ -216,26 +222,27 @@ class RcBrainThread:
     def _updateSteerAngle(self):
         """Update the steering angle based on the current state and the keyboard event.
         """
-        #left steer
-        if self.currentState[2] == True:
-            if self.steerAngle == 0:
-                self.steerAngle = -self.startSteerAngle
-            elif self.steerAngle > -self.configParam.maxSteerAngle:
-                if self.configParam.maxSteerAngle + self.steerAngle < self.configParam.steerAngleStep:
-                    self.steerAngle = - self.configParam.maxSteerAngle
-                else:
-                    self.steerAngle -= self.configParam.steerAngleStep 
-        #right steer    
-        if self.currentState[3] == True:
-            if self.steerAngle == 0:
-                self.steerAngle = self.startSteerAngle
-            elif self.steerAngle < self.configParam.maxSteerAngle:
-                if self.configParam.maxSteerAngle - self.steerAngle < self.configParam.steerAngleStep:
-                    self.steerAngle = self.configParam.maxSteerAngle
-                else:
-                    self.steerAngle += self.configParam.steerAngleStep
-        elif not self.currentState[2] and not self.currentState[3]:
-                self.steerAngle = 0
+        pass
+        # #left steer
+        # if self.currentState[2] == True:
+        #     if self.steerAngle == 0:
+        #         self.steerAngle = -self.startSteerAngle
+        #     elif self.steerAngle > -self.configParam.maxSteerAngle:
+        #         if self.configParam.maxSteerAngle + self.steerAngle < self.configParam.steerAngleStep:
+        #             self.steerAngle = - self.configParam.maxSteerAngle
+        #         else:
+        #             self.steerAngle -= self.configParam.steerAngleStep 
+        # #right steer    
+        # if self.currentState[3] == True:
+        #     if self.steerAngle == 0:
+        #         self.steerAngle = self.startSteerAngle
+        #     elif self.steerAngle < self.configParam.maxSteerAngle:
+        #         if self.configParam.maxSteerAngle - self.steerAngle < self.configParam.steerAngleStep:
+        #             self.steerAngle = self.configParam.maxSteerAngle
+        #         else:
+        #             self.steerAngle += self.configParam.steerAngleStep
+        # elif not self.currentState[2] and not self.currentState[3]:
+        #         self.steerAngle = 0
 
     # ===================================== UPDATE PARAMS ================================
     def _updateParameters(self, currentKey):
